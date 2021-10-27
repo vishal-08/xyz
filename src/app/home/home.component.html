@@ -1,0 +1,32 @@
+<div id="container-el" class="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-6 mt-4" style="margin-left: 50px;">
+
+            <app-list *ngIf="listsArray.length > 0 ; else empty ">
+            </app-list>
+            <ng-template #empty>
+                <img src="./assets/images/task.png" alt="" style="width: 70%; margin-left: 100px;">
+
+                <h1 style="text-align: center;">A Fresh Start</h1>
+                <h3 style="text-align: center;">Anything to add ?</h3>
+
+            </ng-template>
+
+
+            <button class="btn"
+                style="border: none; color: rgb(46, 170, 237); margin-top: 15px; margin-left: 240px; font-size: 20px;"
+                routerLink="/add" data-bs-toggle="tooltip" title="Task Add Button"><i class='bx bx-add-to-queue'
+                    style="font-size: 20px;"></i> Add Task</button>
+        </div>
+
+        <div class="col-md-3"></div>
+    </div>
+    <div class="row">
+
+
+
+        <footer>
+            <app-completed-list *ngIf="listsArray.length > 0 " [(ngModel)] = "completedArray"></app-completed-list>
+    </footer>
+</div>

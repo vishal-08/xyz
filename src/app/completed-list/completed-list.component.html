@@ -1,0 +1,35 @@
+<div class="footer" style="margin-top: 350px; bottom: 0;">
+    <button type="button" class="btn" (click)="isCollapsed = !isCollapsed"
+        [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic" style="border: none; color:#0661e2;">Completed Tasks ({{countArray}})
+        <i class='bx bxs-down-arrow' style='color:#0661e2'  ></i></button>
+    <hr>
+    <div id="collapseBasic" [collapse]="isCollapsed" [isAnimated]="true">
+        <table class="table">
+            <thead>
+                <tr class="table-info">
+                    <th scope="col">id</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Details</th>
+                    <th scope="col">Due Date</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let list of listsArray  ; let indexOfelement=index;" style="border: none;">
+                    <th scope="row"><del>{{indexOfelement + 1}}</del></th>
+                    <td><del>{{list.title}}</del></td>
+                    <td><del>{{list.detail}}</del></td>
+                    <td><del>{{list.dueDate.slice(0,10)}}</del></td>
+                    <td><i class='bx bxs-trash-alt mx-3' style='color:#fb0909; font-size: 20px;'
+                             data-bs-toggle="tooltip" data-bs-placement="left"
+                            title="Delete" (click)="completedDelete(indexOfelement)"></i>
+                       
+                        
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

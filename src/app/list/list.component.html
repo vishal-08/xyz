@@ -1,0 +1,80 @@
+<h1 style="text-align: center;">Todo list</h1>
+
+<div class="row">
+
+    <!-- <table class="table" >
+        <thead>
+            <tr class="table-info" >
+                <th scope="col" >id</th>
+                <th scope="col">Title</th>
+                <th scope="col">Details</th>
+                <th scope="col" >Due Date <i class='bx bxs-sort-alt'></i></th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody class="table-row" >
+            
+            <tr  *ngFor="let list of listsArray; let indexOfelement=index; " >
+                <td scope="row">{{indexOfelement + 1}}</td>
+                <td>{{list.title}}</td>
+                <td>{{list.detail}}</td>
+                <td #rowEl>{{list.dueDate}}</td>
+                <td><i class='bx bxs-trash-alt mx-3' style='color:#fb0909; font-size: 20px;'
+                        (click)='onDelete(indexOfelement)' data-bs-toggle="tooltip" data-bs-placement="left"
+                        title="Delete"></i>
+                    <i class='bx bx-edit' style='color:#015e1b; font-size: 20px;' (click)='onEdit(indexOfelement)'
+                        data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"></i>
+                    <i class='bx bx-check mx-3' style='color:#44b9e0; font-size: 30px;' data-bs-toggle="tooltip"
+                        data-bs-placement="left" title="task Completed" (click) = "onComplete(indexOfelement)"></i>
+                </td>
+            </tr>
+        </tbody>
+    </table> -->
+
+
+    <!-- <accordion [isAnimated]="true" *ngFor="let list of listsArray; let indexOfelement=index; ">
+         <accordion-group heading="{{list.title}}"> 
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                  <div class="ms-2 me-auto">
+                    <div class="fw-bold"><i class='bx bx-circle'></i> {{list.detail}}</div>
+                                     {{list.dueDate}}
+                  </div>
+                  <span ><i class='bx bxs-trash-alt mx-3' style='color:#fb0909; font-size: 20px;'
+                    (click)='onDelete(indexOfelement)' data-bs-toggle="tooltip" data-bs-placement="left"
+                    title="Delete"></i>
+                <i class='bx bx-edit' style='color:#015e1b; font-size: 20px;' (click)='onEdit(indexOfelement)'
+                    data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"></i>
+                <i class='bx bx-check mx-3' style='color:#44b9e0; font-size: 30px;' data-bs-toggle="tooltip"
+                    data-bs-placement="left" title="task Completed" (click) = "onComplete(indexOfelement)"></i></span>
+                </li>
+            </ul>
+        </accordion-group>
+        
+      </accordion>  -->
+
+    
+      <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)" style="margin-left: 100px;" *ngFor="let list of listsArray ; let indexOfelement = index">
+        <div class="example-box"  cdkDrag>
+          <div  class="example-custom-placeholder" *cdkDragPlaceholder ></div>
+          <ol class="list-group " style="width: 100%;" #list >
+            <li class="list-group-item d-flex justify-content-between align-items-start" >
+              <div class="ms-2 me-auto">
+                <div class="fw-bold"><i class='bx bx-grid-vertical' style='color:#9eacdc; font-size: 20px;'  ></i> {{list.title}}</div>
+               <p style="margin-left: 25px;"> {{list.detail}} </p>
+              </div>
+              <span class="badge bg-primary rounded-pill">{{list.dueDate}}</span>
+              <span ><i class='bx bxs-trash-alt mx-3' style='color:#fb0909; font-size: 20px;'
+                (click)='onDelete(indexOfelement)' data-bs-toggle="tooltip" data-bs-placement="left"
+                title="Delete"></i>
+            <i class='bx bx-edit' style='color:#015e1b; font-size: 20px;' (click)='onEdit(indexOfelement)'
+                data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"></i>
+            <i class='bx bx-check mx-3' style='color:#44b9e0; font-size: 30px;' data-bs-toggle="tooltip"
+                data-bs-placement="left" title="task Completed" (click) = "onComplete(indexOfelement)"></i></span>
+            </li>
+            </ol>
+        </div>
+      </div>
+
+     
+</div>

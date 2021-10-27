@@ -1,0 +1,93 @@
+<div class="container " style="margin-top: 100px;">
+    <div class="row">
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-6">
+            <form action="">
+
+
+                <h2 style="text-align: center;">Update Task</h2>
+                <div class="input-group mb-3">
+
+                    <span class="input-group-text"><i class='bx bx-align-right' style="font-size: 20px;"></i></span>
+                    <input type="text" class="form-control title" #titleEl placeholder="Title" name="title"
+                        [(ngModel)]="title">
+                </div>
+
+
+
+                <div class="input-group mb-3">
+
+                    <span class="input-group-text"><i class='bx bx-detail' style="font-size: 20px;"></i></span>
+                    <input type="text" class="form-control detail" #detailEl placeholder="Details" name="detail"
+                        [(ngModel)]="detail">
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="input-group mb-3">
+
+                            <span class="input-group-text"><i class='bx bx-calendar-event'
+                                    style="font-size: 20px;"></i></span>
+                            <div>
+                                <input type="text" placeholder="Datepicker" class="form-control" bsDatepicker
+                                     #dateEl name="dueDate" [(ngModel)] = "dueDate">
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+
+
+                <button class="btn btn-primary" data-bs-toggle="tooltip" title="Update Button"
+                    (click)="update()">Update</button>
+
+                <button class="btn btn-info mx-3" (click)="onCancel()" data-bs-toggle="tooltip"
+                    title="Go back to Home">Cancel</button>
+
+            </form>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+
+</div>
+
+
+
+<!--   <div class="card" style="height: 100vh; border: none; ">
+                <div class="card-header" style="text-align: center; background-color: #a9bae6;">Add Todo Form</div>
+                <div class="card-body">
+                    <form class="example-form" #userForm =  "ngForm" (ngSubmit)= "onSave()">
+
+                        <div class="row">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Title</mat-label>
+                                <input matInput placeholder="Placeholder" [(ngModel)] = "taskModel.title" name="title">
+                                
+                               
+                              </mat-form-field>
+                        </div>
+
+                        <div class="row">
+                            <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label>Description</mat-label>
+                                <textarea matInput placeholder="Ex. It makes me feel..." [(ngModel)] = "taskModel.description" name="description"> </textarea>
+                         
+                            </mat-form-field>
+                        </div>
+
+                        <div class="row">
+                            <mat-form-field class="example-full-width" appearance="outline">
+                                <input matInput [matDatepicker]="picker" placeholder="Due Date..." [(ngModel)] = "taskModel.dueDate" name="duedate">
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                              </mat-form-field>
+                        </div>
+
+                        <button mat-raised-button color="primary" class="mx-3" > Save</button>
+                        <button mat-raised-button color="warn">Cancel</button>
+                    </form>
+                </div>
+            </div> -->
